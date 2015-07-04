@@ -21,15 +21,21 @@
       <hr>
 
       <div class="row-fluid">
-        <div class="span6" ng-repeat="job in foundJobs">
+        <div class="job-container span6" ng-repeat="job in foundJobs">
 
-          <h4><i class="fa fa-lightbulb-o"></i> <span ng-bind-html="job.title"></span></h4>
+          <h4><i class="highlight fa fa-lightbulb-o"></i> <span ng-bind-html="job.title"></span></h4>
+          <hr>
           <div ng-bind-html="job.text"></div>
+
+          <div class="btn-group pull-right btn-group-xs" role="group" aria-label="...">
+            <a type="button" class="btn btn-default" href="https://news.ycombinator.com/item?id={{ job.id }}" target="blank"><i class="fa fa-link"></i> Permalink</a>
+          </div>
+          <div class="clearfix"></div>
 
         </div>
         <div ng-hide="foundJobs" class="row">
           <div class="row vertical-align">
-            <div class="col-md-2" style="text-align:right"><i style="font-size: 50px;" class="fa fa-rocket"></i></div>
+            <div class="col-md-2" style="text-align:right"><i style="font-size: 50px;" class="fa fa-rocket highlight"></i></div>
             <div class="col-md-10">
               <blockquote>
                 <p>Hide not your talents. They for use were made. What's a sundial in the shade?</p>
