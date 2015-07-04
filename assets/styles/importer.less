@@ -1,0 +1,92 @@
+/**
+ * importer.less
+ *
+ * By default, new Sails projects are configured to compile this file
+ * from LESS to CSS.  Unlike CSS files, LESS files are not compiled and
+ * included automatically unless they are imported below.
+ *
+ * The LESS files imported below are compiled and included in the order
+ * they are listed.  Mixins, variables, etc. should be imported first
+ * so that they can be accessed by subsequent LESS stylesheets.
+ *
+ * (Just like the rest of the asset pipeline bundled in Sails, you can
+ * always omit, customize, or replace this behavior with SASS, SCSS,
+ * or any other Grunt tasks you like.)
+ */
+
+
+
+// For example:
+//
+// @import 'variables/colors.less';
+// @import 'mixins/foo.less';
+// @import 'mixins/bar.less';
+// @import 'mixins/baz.less';
+//
+// @import 'styleguide.less';
+// @import 'pages/login.less';
+// @import 'pages/signup.less';
+//
+// etc.
+
+.container-narrow {
+    margin: 0 auto;
+    max-width: 700px;
+}
+
+.highlight {
+	color: #ff6600;
+}
+
+.progress {
+	height: 20px;
+}
+
+.jumbotron {
+    background-color: #f6f6ef;
+    color: #999;    
+}
+
+.jumbotron .progress-bar-info {
+    background-color: #ff6600;
+    transition: width .05s ease;
+}
+
+.jumbotron p {
+    font-size: 14px !important;
+    text-align: justify;    
+}
+
+.jumbotron p code {
+    color: #ff6600;
+    background: none;
+}
+
+tags-input .tags .tag-item {
+    background: #e4edf4 none repeat scroll 0 0;
+    border: 1px solid #e4edf4;
+    border-radius: 0;
+    color: #3e6d8e;
+}
+
+tags-input .tags .tag-item.selected {
+    background: #FFCCCC none repeat scroll 0 0;
+}
+
+tags-input .tags.focused {
+    box-shadow: 0 0 1px 1px rgba(255, 102, 0, 0.8)
+}
+
+.vertical-align {
+    display: flex;
+    align-items: center;
+}
+
+tags-input .tags .tag-item .remove-button:hover {
+    text-decoration: none;
+    color: #ff6600;
+}
+
+.brand:hover, .brand:focus, .brand:active {
+    text-decoration: none;
+}

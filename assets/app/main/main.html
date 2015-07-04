@@ -1,0 +1,48 @@
+	<div ng-controller="HackJobCtrl">      
+      <div class="masthead">
+        <a class="brand" href="#/jobs"><h3 class="muted">hack<span class="highlight">job</span>.io </h3></a>
+      </div>
+
+      <div class="jumbotron">
+        <div ng-hide="loaded">
+      		<h2 style="text-align: center"><i class="fa fa-cloud-download highlight"></i> fetching job data...</h2>
+      		<progressbar ng-style="{'visibility': progress ? 'visible' : 'hidden'}" class="no-animate progress-striped active" max="max" value="progress" type="info">
+      			<span ng-show="progress / max > 0.2" style="color:white; white-space:nowrap;">{{progress}} / {{max}}</span>
+      		</progressbar>
+      	</div>
+
+        <div ng-show="loaded">
+        	<p>Use tags to find jobs! Try searching for technologies (<code>Java</code>, <code>C</code>, <code>Node.js</code>), locations (<code>Los-Angeles</code>, <code>NYC</code>, <code>SF</code>), or perks (<code>free-lunch</code>).</p>
+        	<tags-input min-length="1" ng-model="tags"></tags-input>
+        	<a ng-click="findJobs(tags)" class="pull-right btn btn-large btn-primary">Search</a>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="row-fluid">
+        <div class="span6" ng-repeat="job in foundJobs">
+
+          <h4><i class="fa fa-lightbulb-o"></i> <span ng-bind-html="job.title"></span></h4>
+          <div ng-bind-html="job.text"></div>
+
+        </div>
+        <div ng-hide="foundJobs" class="row">
+          <div class="row vertical-align">
+            <div class="col-md-2" style="text-align:right"><i style="font-size: 50px;" class="fa fa-rocket"></i></div>
+            <div class="col-md-10">
+              <blockquote>
+                <p>Hide not your talents. They for use were made. What's a sundial in the shade?</p>
+                <footer>Benjamin Franklin</footer>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="footer">
+        <p class="pull-right">Built by <i class="fa fa-github"></i> <a href="http://github.com/dvx" target="_blank">dvx</a></p>
+      </div>
+</div>
