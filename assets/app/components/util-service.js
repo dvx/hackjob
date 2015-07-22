@@ -12,7 +12,7 @@
         .service('utilDefinitions', function() {
 
         })
-        .factory('utilService', function($http) {
+        .factory('utilService', function($http, hnResourceService) {
             return {
                 validJob: function (job, tags) {
                     if (job.dead || job.deleted || tags.length == 0) {

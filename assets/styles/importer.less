@@ -44,7 +44,10 @@
 
 .jumbotron {
     background-color: #f6f6ef;
-    color: #999;    
+    color: #999;
+    border: 1px solid #ddd;
+    border-top: none;
+    margin-bottom: 20px;
 }
 
 .jumbotron .progress-bar-info {
@@ -107,4 +110,95 @@ tags-input .tags .tag-item .remove-button:hover {
     border-color: #FF9966;
     margin-bottom: 6px;
     margin-top: 0px;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    background-color: #f6f6ef;
+    color: #999;
+}
+
+.nav > li > a {
+    display: block;
+    padding: 5px 20px;
+    position: relative;
+}
+
+.nav-tabs > li > a {
+    border: 1px solid transparent;
+    border-radius: 0px;
+    line-height: 1.42857;
+    margin-right: 2px;
+}
+
+.masthead {
+    // padding: 10px;
+}
+
+.toplogo {
+    font-family: "Bree Serif";
+    font-size: 20px;
+    line-height: 40px;
+    vertical-align: top;
+}
+
+.toplogo .icon {
+    font-size: 40px;
+    color: #333;
+}
+
+.job-footer {
+    color: #999;
+    float: left;
+    font-size: 11px;
+    padding-top: 4px;
+}
+
+.none-found {
+    color: #999;
+    text-align: center;
+}
+
+////////////////////////////////////////////////////
+
+@font-face {
+    font-family: 'game-icons';
+    src:url('fonts/game-icons.eot?qocxmr');
+    src:url('fonts/game-icons.eot?#iefixqocxmr') format('embedded-opentype'),
+        url('fonts/game-icons.ttf?qocxmr') format('truetype'),
+        url('fonts/game-icons.woff?qocxmr') format('woff'),
+        url('fonts/game-icons.svg?qocxmr#game-icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'game-icons';
+    src:url('fonts/game-icons.eot?n7c9f1');
+    src:url('fonts/game-icons.eot?#iefixn7c9f1') format('embedded-opentype'),
+        url('fonts/game-icons.ttf?n7c9f1') format('truetype'),
+        url('fonts/game-icons.woff?n7c9f1') format('woff'),
+        url('fonts/game-icons.svg?n7c9f1#game-icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="gi-"], [class*=" gi-"] {
+    font-family: 'game-icons';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.gi-hatchets:before {
+    content: "\e601";
+}
+.gi-battered-axe:before {
+    content: "\e600";
 }

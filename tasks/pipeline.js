@@ -33,6 +33,7 @@ var cssFilesToInject = [
 // (uses Grunt-style wildcard/glob/splat expressions)
 var jsFilesToInject = [
   'vendor/sails.io.js/dist/sails.io.js',
+  'vendor/jquery/dist/jquery.min.js',
   'vendor/angular/angular.min.js',
   'vendor/angular-sanitize/angular-sanitize.min.js',
   'vendor/lodash/dist/lodash.min.js',
@@ -45,6 +46,9 @@ var jsFilesToInject = [
   'vendor/angular-sails/dist/angular-sails.min.js',
 
   'vendor/ng-tags-input/ng-tags-input.min.js',
+
+  'vendor/firebase/firebase.js',
+  'vendor/angularfire/angularfire.min.js',
 
   'app/app.js',
   'app/**/*.js'

@@ -1,7 +1,18 @@
 	<div ng-controller="HackJobCtrl">      
       <div class="masthead">
-        <a class="brand" href="#/jobs"><h3 class="muted">hack<span class="highlight">job</span>.io </h3></a>
+        <a class="brand" href="" ng-click="">
+          <span class="muted toplogo"><!--<span class="icon gi-hatchets"></span>--><span>hack<span class="highlight">job</span>.io </span></span>
+        </a>
+        <div style="float: right; padding-top: 20px; padding-left: 10px;">
+          <iframe src="https://ghbtns.com/github-btn.html?user=dvx&repo=hackjob&type=star&count=true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
+        </div>
       </div>
+      <hr style="margin-top:-10px;">
+      <ul class="nav nav-tabs">
+        <li ng-class="app.route === 'who-is-hiring' ? 'active' : ''" ><a href="#/who-is-hiring"><i class="fa fa-building"></i>&nbsp;&nbsp;Who is hiring?</a></li>
+        <li ng-class="app.route === 'who-wants-to-be-hired' ? 'active' : ''"><a href="#/who-wants-to-be-hired"><i class="fa fa-users"></i>&nbsp;&nbsp;Who wants to be hired?</a></li>
+        <li ng-class="app.route === 'freelancer-seeking-freelancer' ? 'active' : ''"><a href="#/freelancer-seeking-freelancer"><i class="fa fa-suitcase"></i>&nbsp;&nbsp;Freelancer? Seeking freelancer?</a></li>
+      </ul>
 
       <div class="jumbotron">
         <div ng-hide="loaded">
@@ -12,28 +23,30 @@
       	</div>
 
         <div ng-show="loaded">
-        	<p>Use tags to find jobs! Try searching for technologies (<code>Java</code>, <code>C</code>, <code>Node.js</code>), locations (<code>Los-Angeles</code>, <code>NYC</code>, <code>SF</code>), or perks (<code>free-lunch</code>).</p>
+          <p ng-bind-html="app.flavor"></p>
         	<tags-input min-length="1" ng-model="tags"></tags-input>
         	<a ng-click="findJobs(tags)" class="pull-right btn btn-large btn-primary">Search</a>
         </div>
       </div>
+
+      <div ng-show="nfound" class="none-found">Nothing found.. <i class="fa fa-frown-o"></i> Try searching with different tags!</div>
 
       <hr>
 
       <div class="row-fluid">
         <div class="job-container span6" ng-repeat="job in foundJobs">
 
-          <h4><i class="highlight fa fa-lightbulb-o"></i> <span ng-bind-html="job.title"></span></h4>
+          <h4><i class="highlight fa fa-lightbulb-o"></i> <span bind-html-compile="job.title"></span></h4>
           <hr>
-          <div ng-bind-html="job.text"></div>
-
+          <div bind-html-compile="job.text"></div>
+          <div class="job-footer"><i class="fa fa-clock-o"></i>&nbsp;&nbsp;<span>{{ job.time * 1000 | date:'MM/dd/yyyy h:mma'}}</span></div>
           <div class="btn-group pull-right btn-group-xs" role="group" aria-label="...">
             <a type="button" class="btn btn-default" href="https://news.ycombinator.com/item?id={{ job.id }}" target="blank"><i class="fa fa-link"></i> Permalink</a>
           </div>
           <div class="clearfix"></div>
 
         </div>
-        <div ng-hide="foundJobs" class="row">
+        <div ng-hide="foundJobs.length > 0" class="row">
           <div class="row vertical-align">
             <div class="col-md-2" style="text-align:right"><i style="font-size: 50px;" class="fa fa-rocket highlight"></i></div>
             <div class="col-md-10">
@@ -49,6 +62,6 @@
       <hr>
 
       <div class="footer">
-        <p class="pull-right">Built by <i class="fa fa-github"></i> <a href="http://github.com/dvx" target="_blank">dvx</a></p>
+        <p class="pull-right">Built by <a href="http://dvt.name" target="_blank">David Titarenco</a></p>
       </div>
 </div>
